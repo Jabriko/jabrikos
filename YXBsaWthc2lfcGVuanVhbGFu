@@ -1,0 +1,46 @@
+Program penjualan_toko;
+uses crt;
+var
+   a, jumlah_varian : integer;
+   total, bayar : real;
+   nama : array[1..25] of string;
+   harga, qty : array[1..25] of real;
+   
+
+begin
+   writeln('                                X2RMart                             ');
+   writeln('====================================================================');
+   write('Input Jumlah Varian 			    :     ');
+   readln(jumlah_varian);
+   for a := 1 to jumlah_varian do
+   begin
+     write('Input Nama Barang  			',a,'   :     ');
+     readln(nama[a]);
+     write('Input Harga Barang 			',a,'   :     ');
+     readln(harga[a]);
+     write('Jumlah Barang yang dibeli               ',a,'   :     ');
+     readln(qty[a]);
+   end;
+   readln;
+
+   writeln('==========================================================================');
+   writeln('No : ','      Nama Barang : ','            Harga Barang : ','        Jumlah/QTY  : ');
+   writeln('==========================================================================');
+   for a := 1 to jumlah_varian do
+      begin
+         writeln(a:2,' ',nama[a]:15,harga[a]:26:0,qty[a]:20:0);
+      end;
+      readln;
+      writeln('==========================================================================');
+      for a := 1 to jumlah_varian do
+         begin
+           total := total + (harga[a] * qty[a]);
+         end;
+
+            writeln('total belanja    :',total:3:0);
+            write('uang tunai       :');
+            readln(bayar);
+            writeln('uang kembalian   :',bayar - total:3:0);
+            writeln('=========================== Terima Kasih ===========================');
+            readln;
+end. 
