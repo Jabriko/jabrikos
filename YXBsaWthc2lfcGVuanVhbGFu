@@ -2,7 +2,8 @@ Program penjualan_toko;
 uses crt;
 var
    a, jumlah_varian : integer;
-   total, bayar : real;
+   total : real = 0;
+   bayar : real;
    nama : array[1..25] of string;
    harga, qty : array[1..25] of real;
    
